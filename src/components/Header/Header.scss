@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+@import "../../styles/partials/variables";
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    height: 50%;
+    width: 50%;
+}
+.nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+
+    &__list-item {
+        display: flex;
+    }
+    &__tag-number{
+        margin-right: 0.5rem;
+    }
+}
