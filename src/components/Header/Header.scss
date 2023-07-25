@@ -1,0 +1,44 @@
+@use "../../styles/partials/mixins" as *;
+@import "../../styles/partials/variables";
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+.logo {
+  height: 50%;
+  width: 50%;
+}
+.header__nav {
+    display: none;
+  }
+
+.header__nav.active {
+    display: flex;
+    flex-direction: column;
+} 
+.nav {
+  list-style-type: none;
+
+  &__tag {
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-number {
+      display: block;
+    }
+
+    &-button {
+      display: inline-block;
+      padding: 0.625rem 1.25rem;
+      background-color: #1787ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.313rem;
+      margin-top: 0.625rem;
+    }
+  }
+}
