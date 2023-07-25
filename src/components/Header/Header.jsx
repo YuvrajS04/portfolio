@@ -15,8 +15,8 @@ function Header() {
         <img className="logo" src={logo} />
       </div>
       <img className="close-icon" src={close} onClick={ToggleNav} />
-      <nav className="nav__mobile"></nav>
-      {navOpen && (
+      <div className={` ${navOpen ? "blur" : 'no-blur' }`}  ></div>
+      
       <nav className={`header__nav ${navOpen ? 'active' : '' }`} >
         <ul className="nav">
           <li className="nav__list-item">
@@ -42,7 +42,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      )}
+      
     </header>
   );
 }
