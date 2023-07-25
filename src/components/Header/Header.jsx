@@ -1,14 +1,23 @@
 import "./Header.scss";
 import logo from "../../assets/logo/logo.svg";
+import close from "../../assets/icons/close.svg";
+import React from "react";
+import { useState } from "react";
 
 function Header() {
+  const [navOpen, setNavOpen] = useState(false);
+  const ToggleNav = () => {
+    setNavOpen(!navOpen)
+  };
   return (
     <header className="header">
       <div className="header__logo">
         <img className="logo" src={logo} />
       </div>
+      <img className="close-icon" src={close} onClick={ToggleNav} />
       <nav className="nav__mobile"></nav>
-      <nav className="header__nav">
+      {navOpen && (
+      <nav className={`header__nav ${navOpen ? 'active' : '' }`} >
         <ul className="nav">
           <li className="nav__list-item">
             <a className="nav__tag" id="about">
@@ -33,6 +42,7 @@ function Header() {
           </li>
         </ul>
       </nav>
+      )}
     </header>
   );
 }

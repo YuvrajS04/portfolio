@@ -9,10 +9,16 @@
   height: 50%;
   width: 50%;
 }
+.header__nav {
+    display: none;
+  }
+
+.header__nav.active {
+    display: flex;
+    flex-direction: column;
+} 
 .nav {
   list-style-type: none;
-  display: flex;
-  flex-direction: column;
 
   &__tag {
     text-transform: capitalize;
@@ -31,8 +37,8 @@
       background-color: #1787ff;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      border-radius: 0.313rem;
+      margin-top: 0.625rem;
     }
   }
 }
