@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+@import "../../styles/partials/variables";
+
+*{
+    background-color: #0A192F;
+}
+
+.hero{
+    min-height: 100vh;
+    // padding: 10rem 2rem; 
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__subheading{
+        // font-family: "SFMono";
+        color: #54D9BF;
+    }
+}
