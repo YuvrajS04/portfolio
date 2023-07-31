@@ -45,6 +45,31 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <nav className="header__nav-desktop" >
+        <ul className="nav__list-desktop">
+          <li className="nav-list__item-desktop">
+            <a className="nav__tag-desktop">
+              <span className="nav__tag-number-desktop">01.</span>
+              about
+            </a>
+          </li>
+          <li className="nav-list__item-desktop">
+            <a className="nav__tag-desktop">
+              <span className="nav__tag-number-desktop">02.</span>
+              work
+            </a>
+          </li>
+          <li className="nav-list__item-desktop">
+            <a className="nav__tag-desktop">
+              <span className="nav__tag-number-desktop">03.</span>
+              contact
+            </a>
+          </li>
+          <li>
+            <a className="nav__button-desktop">Resume</a>
+          </li>
+        </ul>
+      </nav>
 
     </header>
   );
