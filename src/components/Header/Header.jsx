@@ -3,13 +3,24 @@ import logo from "../../assets/logo/logo.svg";
 import close from "../../assets/icons/close.svg";
 import menu from "../../assets/icons/menu.svg"
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
   const [navOpen, setNavOpen] = useState(false);
+  const [bodyScroll, setBodyScroll] = useState(true);
   const ToggleNav = () => {
     setNavOpen(!navOpen)
+    setBodyScroll(!navOpen)
   };
+
+  useEffect(() => {
+    document.body.style.overflow = bodyScroll ? "auto" : "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto"
+    };
+  }, [bodyScroll])
+
   return (
     <header className="header">
       <div className="header__logo">
