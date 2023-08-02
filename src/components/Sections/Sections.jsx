@@ -45,6 +45,9 @@ function Sections() {
                 </div>
 
             </section>
+            <section id="work" className="work">
+                <h2 className="heading"><span className="heading__number">02.</span>some things i've built</h2>
+            </section>
         </>
     );
 }
