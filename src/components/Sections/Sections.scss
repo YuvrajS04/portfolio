@@ -186,6 +186,88 @@
 
 .work {
     background-color: #0A192F;
-    padding: 0 3.125rem;
-    margin:  0 auto;
+    padding: 0rem 3.125rem;
+    max-width: 92.25rem;
+    margin: 0 auto;
+
+    @include tablet {
+        padding: 0rem 6.25rem;
+    }
+
+    @include desktop {
+        padding: 0 9.375rem;
+    }
+
+}
+
+// Size can also be negative; see how it's smaller than the element
+.buttons .raise:hover,
+.buttons .raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+/* Set button colors (only for the raise button) */
+.buttons .raise { 
+  --color: #64ffda; 
+  --hover: #fff; 
+}
+
+/* Basic button styles (only for the raise button) */
+.buttons .raise {  
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-radius: 0.313rem;
+
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+body .container,
+body .border {
+    width: 10vh;
+    height: 10vh;
+    background: #292929;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    overflow: hidden;
+    transform: translate(-5%, -5%);
+    clip-path: polygon(0% 50%, 25% 95%, 75% 95%, 100% 50%, 75% 5%, 25% 5%);
+}
+
+body .container .border,
+body .border .border {
+    width: 90%;
+    height: 90%;
+}
+
+body .container .border .content,
+body .border .border .content {
+    width: 150%;
+    height: 100%;
+    background: #64ffda;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: contentAnimation 2s infinite linear;
+    transform-origin: center top;
+}
+
+@keyframes contentAnimation {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(-360deg);
+    }
 }
