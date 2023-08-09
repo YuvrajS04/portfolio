@@ -7,10 +7,10 @@ function project() {
     <h3 className="project__heading"></h3>
     <p className="project__description"></p>
     <ul className="project__tech-stack-list">
-        <li className="tech-stack__list-item"></li>
+        <li className="project__tech-stack-item"></li>
     </ul>
     <a href="" className="project__link">
-        <img src="" alt="Github Logo" className="link__logo" />
+        <img src="" alt="Github Logo" className="project__link-logo" />
     </a>
     
 
