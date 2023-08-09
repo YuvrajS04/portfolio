@@ -1,4 +1,5 @@
 import "./Sections.scss";
+import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 
 function Sections() {
@@ -79,6 +80,7 @@ function Sections() {
         <h2 className="heading">
           <span className="heading__number">02.</span>some things i've built
         </h2>
+        <Project />
       </section>
     </>
   );
