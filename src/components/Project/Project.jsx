@@ -1,6 +1,9 @@
-import "./project.scss";
+import React from "react";
+import "./Project.scss";
+import projectdata from "../../assets/data/projectsdata.json"
 
 function project() {
+    console.log(projectdata);
   return ( 
   <div className="project">
     <h4 className="project__subheading">Featured Project</h4>

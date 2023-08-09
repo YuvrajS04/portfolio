@@ -1,0 +1,8 @@
+[
+{
+    "heading" : "TripWhiz",
+    "description" : "TripWhiz is a web application that helps users discover their ideal vacation destinations. With the click of a button, users can select from a variety of tags, such as adventure, tropical, historical, wildlife, and more. TripWhiz then presents the user with a gallery of photos that correspond to their chosen tags, from which they can select photos that inspire them the most",
+    "techStack" : "React, Node.js, Express, Axios, react-toastify, API Development",
+    "githubLink" : "https://github.com/YuvrajS04/TripWhiz"
+}
+]
