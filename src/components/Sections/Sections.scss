@@ -181,11 +181,18 @@
     background-color: #233554;
     margin-left: 1.5rem;
     position: relative;
-    top: 0.25rem;
+    top: 0.125rem;
 }
 
 .work {
     background-color: #0A192F;
     padding: 0 3.125rem;
     margin:  0 auto;
+    @include tablet {
+        padding: 0rem 6.25rem;
+    }
+
+    @include desktop {
+        padding: 0 9.375rem;
+    }
 }
