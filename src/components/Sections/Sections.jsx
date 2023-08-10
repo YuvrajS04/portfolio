@@ -1,4 +1,5 @@
 import "./Sections.scss";
+import projectdata from "../../assets/data/projectsdata.json"
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 
@@ -80,7 +81,9 @@ function Sections() {
         <h2 className="heading">
           <span className="heading__number">02.</span>some things i've built
         </h2>
-        <Project />
+        {projectdata.map((project, index) => (
+            <Project key={index} project={project} />
+        )) }
       </section>
     </>
   );
