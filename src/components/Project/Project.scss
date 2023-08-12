@@ -1,3 +1,59 @@
 @use "../../styles/partials/mixins" as *;
 @import "../../styles/partials/variables";
 
+.project {
+  position: relative;
+  background: #2f4f4f2e;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &__description {
+    color: #a8b2d1;
+    font-size: 1.125rem;
+    padding: 1.2rem 0rem;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/images/tripwhiz.png) no-repeat center center /
+      cover;
+    opacity: 0.2; /* Lower opacity */
+    mix-blend-mode: multiply;
+  }
+  &__link {
+    &-logo{
+        height: 1.2rem;
+    }
+  }
+  &__subheading {
+    margin: 0.625rem 0;
+    color: #64ffda;
+    font-size: 0.813rem;
+  }
+  &__heading {
+    color: #e6f1ff;
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
+    margin: 0rem;
+  }
+
+  &__tech-stack {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      flex-direction: row;
+      list-style-type: none;
+      padding: 0;
+    }
+    &-item{
+        color: #64ffda;
+        margin-right: 1rem;
+        margin-bottom: 0.25rem;
+        text-transform: capitalize;
+    }
+  }
+}
