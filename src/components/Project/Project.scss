@@ -8,13 +8,26 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    background: none;
+  }
+
   &__description {
     color: #a8b2d1;
     font-size: 1.125rem;
     padding: 1.2rem 0rem;
+    @include tablet {
+        flex: 1; /* Take up remaining space */
+        z-index: 1; /* Ensure text is on top of the image */
+        position: relative;
+        background: rgba(0, 0, 0, 0.6);
+        margin-right: -4rem;
+    }
   }
   &__image {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,6 +36,12 @@
       cover;
     opacity: 0.2; /* Lower opacity */
     mix-blend-mode: multiply;
+    @include tablet {
+        width: 50%;
+        height: inherit;
+        opacity: unset;
+        mix-blend-mode: unset;
+    }
   }
   &__link {
     &-logo{
@@ -54,6 +73,15 @@
         margin-right: 1rem;
         margin-bottom: 0.25rem;
         text-transform: capitalize;
+    }
+  }
+  &__wrapper{
+    display: none;
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-right: 1rem;
     }
   }
 }
