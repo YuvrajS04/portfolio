@@ -21,7 +21,9 @@ function Sections() {
             Together, let's bring your ideas to life and make a meaningful
             impact in the digital realm.
           </p>
-          <a className="hero__button">Discover my work</a>
+          <div class="buttons">
+            <a class="raise" target="_blank" href="https://github.com/YuvrajS04">Discover my work</a>
+          </div>
         </div>
       </section>
       <section id="about" className="about">
@@ -88,7 +90,17 @@ function Sections() {
       <section id="contact" className="contact">
         <h2 className="contact__heading-alternate">03. what's next?</h2>
         <h2 className="contact__heading">get in touch</h2>
-        <p className="contact__description">I'm currently exploring opportunities as a web developer. With a passion for coding and an eye for design, I'm on a mission to create seamless online experiences. Whether it's building interactive websites or optimizing user interfaces, I'm excited to collaborate on projects that make an impact. Let's connect and discuss how I can contribute to your next web endeavor.</p>
+        <p className="contact__description">
+          I'm currently exploring opportunities as a web developer. With a
+          passion for coding and an eye for design, I'm on a mission to create
+          seamless online experiences. Whether it's building interactive
+          websites or optimizing user interfaces, I'm excited to collaborate on
+          projects that make an impact. Let's connect and discuss how I can
+          contribute to your next web endeavor.
+        </p>
+        <div class="buttons">
+          <a class="raise" target="_blank" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
+        </div>
       </section>
     </>
   );
