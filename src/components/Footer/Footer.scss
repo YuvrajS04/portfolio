@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@import "../../styles/partials/variables";
+
+.footer {
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  &__icon {
+    height: 1.5rem;
+  }
+  &__description{
+    color: #a8b2d1;
+    display: flex;
+    justify-content: center;
+
+    &-link {
+        margin-left: 0.25rem;
+        color: #64ffda;
+    }
+    &-link:visited {
+        color: #64ffda;
+    }
+  }
+
+}
