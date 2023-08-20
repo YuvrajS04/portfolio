@@ -243,9 +243,6 @@
     justify-content: center;
 }
 
-a, a:visited {
-    text-decoration: none;
-}
 /* Basic button styles (only for the raise button) */
 .buttons .raise {  
   color: var(--color);
@@ -264,4 +261,8 @@ a, a:visited {
     border-color: var(--hover);
     color: #fff;
   }
+}
+
+a, a:visited {
+  text-decoration: none;
 }

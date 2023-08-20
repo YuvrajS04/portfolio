@@ -22,7 +22,7 @@ function Sections() {
             impact in the digital realm.
           </p>
           <div class="buttons">
-            <a class="raise" target="_blank" href="https://github.com/YuvrajS04">Discover my work</a>
+            <a class="raise" target="_blank" rel="noreferrer" href="https://github.com/YuvrajS04">Discover my work</a>
           </div>
         </div>
       </section>
@@ -99,7 +99,7 @@ function Sections() {
           contribute to your next web endeavor.
         </p>
         <div class="buttons">
-          <a class="raise" target="_blank" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
+          <a class="raise" target="_blank" rel="noreferrer" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
         </div>
       </section>
     </>
