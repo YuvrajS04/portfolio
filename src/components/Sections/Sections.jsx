@@ -1,5 +1,5 @@
 import "./Sections.scss";
-import projectdata from "../../assets/data/projectsdata.json"
+import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 
@@ -21,7 +21,9 @@ function Sections() {
             Together, let's bring your ideas to life and make a meaningful
             impact in the digital realm.
           </p>
-          <a className="hero__button">Discover my work</a>
+          <div class="buttons">
+            <a class="raise" target="_blank" rel="noreferrer" href="https://github.com/YuvrajS04">Discover my work</a>
+          </div>
         </div>
       </section>
       <section id="about" className="about">
@@ -82,8 +84,23 @@ function Sections() {
           <span className="heading__number">02.</span>some things i've built
         </h2>
         {projectdata.map((project, index) => (
-            <Project key={index} project={project} />
-        )) }
+          <Project key={index} project={project} />
+        ))}
+      </section>
+      <section id="contact" className="contact">
+        <h2 className="contact__heading-alternate">03. what's next?</h2>
+        <h2 className="contact__heading">get in touch</h2>
+        <p className="contact__description">
+          I'm currently exploring opportunities as a web developer. With a
+          passion for coding and an eye for design, I'm on a mission to create
+          seamless online experiences. Whether it's building interactive
+          websites or optimizing user interfaces, I'm excited to collaborate on
+          projects that make an impact. Let's connect and discuss how I can
+          contribute to your next web endeavor.
+        </p>
+        <div class="buttons">
+          <a class="raise" target="_blank" rel="noreferrer" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
+        </div>
       </section>
     </>
   );
