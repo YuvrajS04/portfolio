@@ -1,20 +1,19 @@
 import "./Footer.scss";
-import linkedin from "../../assets/icons/linkedin2.svg"
-import github from "../../assets/icons/github.svg"
+import { Icon } from '@iconify/react';
 
 
 function Footer() {
     return (
         <footer className="footer">
             <ul className="footer__list">
-                <a><li className="footer__list-item"><img src={linkedin} alt="linkenin" className="footer__icon" /></li></a>
-                <a><li className="footer__list-item"><img src={github} alt="github" className="footer__icon" /></li></a>
+                <a href="https://www.linkedin.com/in/yuvraj-sirohi/" ><li className="footer__list-item"><Icon className="footer__icon" icon="line-md:linkedin" /></li></a>
+                <a href="https://github.com/YuvrajS04"><li className="footer__list-item"><Icon className="footer__icon" icon="line-md:github-loop" /></li></a>
             </ul>
             <ul className="footer__list-desktop">
-                <a><li className="footer__list-item-desktop"><img src={linkedin} alt="linkenin" className="footer__icon" /></li></a>
-                <a><li className="footer__list-item-desktop"><img src={github} alt="github" className="footer__icon" /></li></a>
+                <a href="https://www.linkedin.com/in/yuvraj-sirohi/" ><li className="footer__list-item-desktop"><Icon className="footer__icon" icon="line-md:linkedin" /></li></a>
+                <a href="https://github.com/YuvrajS04" ><li className="footer__list-item-desktop"><Icon className="footer__icon" icon="line-md:github-loop" /></li></a>
             </ul>
-            <a className="footer__text-link-desktop">yuvrajsirohi22@gmail.com</a>
+            <a href="mailto:yuvrajsirohi22@gmail.com" className="footer__text-link-desktop" target="_blank" rel="noreferrer">yuvrajsirohi22@gmail.com</a>
             <p className="footer__description">Design heavily influenced by <a className="footer__description-link" href="https://github.com/bchiang7"> Brittany Chiang</a></p>
         </footer>
     )

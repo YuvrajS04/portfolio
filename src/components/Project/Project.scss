@@ -48,7 +48,12 @@
   }
   &__link {
     &-logo{
-        height: 1.2rem;
+      color: #ccd6f6;
+      width: 1.5rem; 
+      height: 1.5rem;
+    }
+    &-logo:hover{
+      color: #64ffda;
     }
   }
   &__subheading {

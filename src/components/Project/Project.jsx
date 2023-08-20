@@ -1,7 +1,7 @@
 import React from "react";
 import "./Project.scss";
-import Github from "../../assets/icons/github2.svg";
-import tripwhiz from "../../assets/images/tripwhiz.png";
+import { Icon } from '@iconify/react';
+
 
 function project({ project }) {
   const techArray = project.techStack.split(", ").map((tech) => tech.trim());
@@ -20,10 +20,10 @@ function project({ project }) {
           ))}
         </ul>
         <a href={project.githubLink} className="project__link">
-          <img src={Github} alt="Github Logo" className="project__link-logo" />
+          <Icon className="project__link-logo" icon="line-md:github-loop" />
         </a>
       </div>
-      <div className="project__image"></div>
+      <div className="project__image" alt={project.heading} ></div>
     </div>
   );
 }
