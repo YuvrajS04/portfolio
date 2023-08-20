@@ -100,6 +100,7 @@
   @include tablet {
     display: flex;
     list-style-type: none;
+    align-items: center;
   }
 }
 
@@ -109,7 +110,12 @@
   color: #ccd6f6;
   text-transform: capitalize;
   margin-right: 2rem;
+  cursor: pointer;
   }
+}
+
+.nav__tag-desktop:hover{
+    color: #64ffda;
 }
 
 .nav__tag-number-desktop{
@@ -154,6 +160,10 @@
       font-size: 1.125rem;
       color: #ccd6f6;
     }
+    &-text:hover{
+      color: #64ffda;
+      cursor: pointer;
+    }
 
     &-number {
       display: block;
@@ -174,5 +184,43 @@
       margin: 3rem auto;
       border: 0.125rem solid #64ffda;
     }
+  }
+}
+
+// Size can also be negative; see how it's smaller than the element
+.buttons .raise:hover,
+.buttons .raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+/* Set button colors (only for the raise button) */
+.buttons .raise { 
+  --color: #64ffda; 
+  --hover: #fff; 
+}
+.buttons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Basic button styles (only for the raise button) */
+.buttons .raise {  
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 5rem 0;
+  padding: 1em 2em;
+  border-radius: 0.313rem;
+  max-width: 14rem;
+
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
   }
 }
