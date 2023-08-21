@@ -2,10 +2,24 @@ import "./Sections.scss";
 import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
+import { useState, useEffect } from "react";
 
 function Sections() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sections = `sections ${isVisible ? 'visible' : ''}`;
+
+  useEffect(() => {
+    const sectionsTimeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 1500);
+    
+    return () => {
+      clearTimeout(sectionsTimeout);
+    }
+  }, []);
+
   return (
-    <>
+    <div className={sections}>
       <section className="hero">
         <div className="hero__container">
           <h3 className="hero__subheading">Hi there, I'm</h3>
@@ -102,7 +116,7 @@ function Sections() {
           <a class="raise" target="_blank" rel="noreferrer" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
