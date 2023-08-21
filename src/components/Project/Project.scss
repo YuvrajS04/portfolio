@@ -47,6 +47,11 @@
     }
   }
   &__link {
+    position: absolute;
+    z-index: 2;
+    @include tablet {
+      position: static;
+    }
     &-logo{
       color: #ccd6f6;
       width: 1.5rem; 
