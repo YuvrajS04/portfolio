@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 function Header() {
   const [navOpen, setNavOpen] = useState(false);
   const [bodyScroll, setBodyScroll] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const header = `header ${isVisible ? 'visible' : ''}`;
   const ToggleNav = () => {
     setNavOpen(!navOpen)
     setBodyScroll(navOpen)
@@ -32,7 +34,6 @@ function Header() {
       setBodyScroll(true)
     }
   }
-
   useEffect(() => {
     document.body.style.overflow = bodyScroll ? "auto" : "hidden";
 
@@ -49,10 +50,19 @@ function Header() {
     };
   }, [navOpen])
 
+  useEffect(() => {
+    const headerTimeout = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
 
+    return () => {
+      clearTimeout(headerTimeout);
+    }
+
+  }, []);
 
   return (
-    <header className="header">
+    <header className={header}>
       <div className="header__logo">
         <img className="logo" src={logo} />
       </div>
