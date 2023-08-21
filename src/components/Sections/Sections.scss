@@ -1,6 +1,13 @@
 @use "../../styles/partials/mixins" as *;
 @import "../../styles/partials/variables";
 
+.sections{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  &.visible {
+    opacity: 1;
+  }
+}
 .hero {
   min-height: calc(100vh - 100px);
   display: flex;
