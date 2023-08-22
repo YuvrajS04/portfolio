@@ -1,7 +1,7 @@
 import "./Header.scss";
-import logo from "../../assets/logo/logo.svg";
+import logo from "../../assets/logo/Yuvraj.png";
 import close from "../../assets/icons/close.svg";
-import menu from "../../assets/icons/menu.svg"
+import menu from "../../assets/icons/menu.svg";
 import React from "react";
 import { useState, useEffect } from "react";
 
@@ -9,68 +9,96 @@ function Header() {
   const [navOpen, setNavOpen] = useState(false);
   const [bodyScroll, setBodyScroll] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
-  const header = `header ${isVisible ? 'visible' : ''}`;
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
   const ToggleNav = () => {
-    setNavOpen(!navOpen)
-    setBodyScroll(navOpen)
+    setNavOpen(!navOpen);
+    setBodyScroll(navOpen);
   };
   const handleClickOutsideNav = (event) => {
     const headerNav = document.querySelector(".header__nav");
     const menu = document.querySelector(".menu");
-    
+
     if (headerNav) {
-      if (headerNav && menu && !headerNav.contains(event.target) && !menu.contains(event.target)) {
-        setNavOpen(false)
-        setBodyScroll(navOpen)
+      if (
+        headerNav &&
+        menu &&
+        !headerNav.contains(event.target) &&
+        !menu.contains(event.target)
+      ) {
+        setNavOpen(false);
+        setBodyScroll(navOpen);
       }
     }
-  }
+  };
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({behavior: "smooth"});
-      setNavOpen(false)
-      setBodyScroll(true)
+      section.scrollIntoView({ behavior: "smooth" });
+      setNavOpen(false);
+      setBodyScroll(true);
     }
-  }
+  };
   useEffect(() => {
     document.body.style.overflow = bodyScroll ? "auto" : "hidden";
 
     return () => {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     };
-  }, [bodyScroll])
+  }, [bodyScroll]);
 
   useEffect(() => {
     window.addEventListener("click", handleClickOutsideNav);
 
     return () => {
-      window.removeEventListener("click", handleClickOutsideNav)
+      window.removeEventListener("click", handleClickOutsideNav);
     };
-  }, [navOpen])
+  }, [navOpen]);
 
   useEffect(() => {
-    const headerTimeout = setTimeout(() => {
       setIsVisible(true);
-    }, 1000);
+    }, []);
+  useEffect(() => {
+    const handlescroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY) {
+        setIsScrolled(false);
+       } else {
+        setTimeout(() => {
+          setIsScrolled(true);
+        }, 250);
+       }
+       setPrevScrollY(currentScrollY);
+    }
+    window.addEventListener("scroll", handlescroll);
 
     return () => {
-      clearTimeout(headerTimeout);
+      window.removeEventListener("scroll", handlescroll);
     }
-
-  }, []);
-
+  }, [prevScrollY]);
   return (
-    <header className={header}>
-      <div className="header__logo">
+    <header
+      className={`header ${isVisible ? "visible" : ""} ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
+      <div className="header__logo delay1">
         <img className="logo" src={logo} />
       </div>
-      <img className={` ${navOpen ? "menu" : "menu-alternative"}`} src={menu} onClick={ToggleNav} />
-      <div className={` ${navOpen ? "blur" : 'no-blur'}`}  ></div>
+      <img
+        className={` ${navOpen ? "menu" : "menu-alternative"}`}
+        src={menu}
+        onClick={ToggleNav}
+      />
+      <div className={` ${navOpen ? "blur" : "no-blur"}`}></div>
 
-      <nav className={`header__nav ${navOpen ? 'active' : ''}`} >
-        <img className={` ${navOpen ? "close" : "close-alternative"}`} src={close} onClick={ToggleNav} />
+      <nav className={`header__nav ${navOpen ? "active" : ""}`}>
+        <img
+          className={` ${navOpen ? "close" : "close-alternative"}`}
+          src={close}
+          onClick={ToggleNav}
+        />
 
         <ul className="nav">
           <li className="nav__list-item">
@@ -99,19 +127,28 @@ function Header() {
       <nav className="header__nav-desktop" >
         <ul className="nav__list-desktop">
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("about")}>
+            <a
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("about")}
+            >
               <span className="nav__tag-number-desktop">01.</span>
               about
             </a>
           </li>
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("work")}>
+            <a
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("work")}
+            >
               <span className="nav__tag-number-desktop">02.</span>
               work
             </a>
           </li>
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("contact")}>
+            <a
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("contact")}
+            >
               <span className="nav__tag-number-desktop">03.</span>
               contact
             </a>
