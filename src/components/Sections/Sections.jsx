@@ -6,28 +6,35 @@ import { useState, useEffect } from "react";
 
 function Sections() {
   const [isVisible, setIsVisible] = useState(false);
-  const sections = `sections ${isVisible ? 'visible' : ''}`;
 
   useEffect(() => {
-    const sectionsTimeout = setTimeout(() => {
-      setIsVisible(true);
-    }, 1500);
-    
-    return () => {
-      clearTimeout(sectionsTimeout);
-    }
+    setIsVisible(true)
   }, []);
 
   return (
-    <div className={sections}>
+    <div className={`sections`}>
       <section className="hero">
-        <div className="hero__container">
-          <h3 className="hero__subheading">Hi there, I'm</h3>
-          <h1 className="hero__heading">Yuvraj Sirohi.</h1>
-          <h2 className="hero__statement">A Web Developer on a mission.</h2>
+        <div className={`hero__container ${isVisible ? "visible" : ""}`}>
+          <h3
+            className={`hero__subheading slide-from-top`}
+          >
+            Hi there, I'm
+          </h3>
+          <h1
+            className={`hero__heading slide-from-top`}
+          >
+            Yuvraj Sirohi.
+          </h1>
+          <h2
+            className={`hero__statement slide-from-top`}
+          >
+            A Web Developer on a mission.
+          </h2>
           {/* <h2 className="hero__statement">Crafting Digital Solutions with Precision.</h2>
                 <h2 className="hero__statement">Transforming Ideas into Seamless Reality.</h2> */}
-          <p className="hero__paragraph">
+          <p
+            className="hero__paragraph slide-from-top"
+          >
             In the ever-evolving world of web development, I find my passion in
             turning complex challenges into elegant solutions. With expertise in
             HTML, CSS, JavaScript, Node, React, and more, I embrace every
@@ -35,8 +42,15 @@ function Sections() {
             Together, let's bring your ideas to life and make a meaningful
             impact in the digital realm.
           </p>
-          <div class="buttons">
-            <a class="raise" target="_blank" rel="noreferrer" href="https://github.com/YuvrajS04">Discover my work</a>
+          <div class="buttons ">
+            <a
+              class="raise"
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/YuvrajS04"
+            >
+              Discover my work
+            </a>
           </div>
         </div>
       </section>
@@ -113,7 +127,14 @@ function Sections() {
           contribute to your next web endeavor.
         </p>
         <div class="buttons">
-          <a class="raise" target="_blank" rel="noreferrer" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
+          <a
+            class="raise"
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:yuvrajsirohi22@gmail.com"
+          >
+            Reach out!
+          </a>
         </div>
       </section>
     </div>
