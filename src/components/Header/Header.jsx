@@ -57,25 +57,25 @@ function Header() {
   }, [navOpen]);
 
   useEffect(() => {
-      setIsVisible(true);
-    }, []);
+    setIsVisible(true);
+  }, []);
   useEffect(() => {
     const handlescroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > prevScrollY) {
         setIsScrolled(false);
-       } else {
+      } else {
         setTimeout(() => {
           setIsScrolled(true);
         }, 250);
-       }
-       setPrevScrollY(currentScrollY);
-    }
+      }
+      setPrevScrollY(currentScrollY);
+    };
     window.addEventListener("scroll", handlescroll);
 
     return () => {
       window.removeEventListener("scroll", handlescroll);
-    }
+    };
   }, [prevScrollY]);
   return (
     <header
@@ -83,7 +83,7 @@ function Header() {
         isScrolled ? "scrolled" : ""
       }`}
     >
-      <div className="header__logo delay1">
+      <div className="header__logo">
         <img className="logo" src={logo} />
       </div>
       <img
@@ -124,7 +124,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <nav className="header__nav-desktop" >
+      <nav className="header__nav-desktop">
         <ul className="nav__list-desktop">
           <li className="nav-list__item-desktop">
             <a
