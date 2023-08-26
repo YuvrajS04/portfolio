@@ -95,6 +95,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+  font-family: "SFMono";
   // transition: right 0.5s ease-in-out;
 
   @include tablet {
@@ -120,11 +121,12 @@
 
 .nav__tag-desktop {
   @include tablet {
-    font-size: 1rem;
+    font-size: 0.813rem;
     color: #ccd6f6;
     text-transform: capitalize;
     margin-right: 2rem;
     cursor: pointer;
+    font-family: 'SFMono';
   }
 }
 
@@ -136,6 +138,8 @@
   @include tablet {
     color: #64ffda;
     margin-right: 0.313rem;
+    font-family: 'SFMono';
+    font-size: 0.688rem;
   }
 }
 
@@ -173,6 +177,7 @@
     &-text {
       font-size: 1.125rem;
       color: #ccd6f6;
+      font-family: "SFMono";
     }
     &-text:hover {
       color: #64ffda;
@@ -184,6 +189,7 @@
       font-size: 1rem;
       color: #64ffda;
       margin-bottom: 0.3rem;
+      font-family: "SFMono";
     }
 
     // &-button {
