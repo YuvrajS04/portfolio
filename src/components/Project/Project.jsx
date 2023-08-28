@@ -9,7 +9,9 @@ function Project({ project, projImg }) {
     <div className="project">
       <div className="project__wrapper">
         <h4 className="project__subheading">Featured Project</h4>
-        <h3 className="project__heading">{project.heading}</h3>
+        <a className="project-heading__wrapper" target="_blank" rel="noreferrer" href={project.githubLink}>
+          <h3 className="project__heading">{project.heading}</h3>
+        </a>
         <div className="project-description__wrapper">
           <p className="project__description">{project.description}</p>
           <ul className="project__tech-stack-list">
@@ -19,13 +21,13 @@ function Project({ project, projImg }) {
               </li>
             ))}
           </ul>
-          <a href={project.githubLink} className="project__link">
+          <a target="_blank" rel="noreferrer" href={project.githubLink} className="project__link">
             <Icon className="project__link-logo" icon="line-md:github-loop" />
           </a>
         </div>
       </div>
       <div className="project__image">
-        <img className="project__img" src={projImg} />
+        <img className="project__img" src={projImg} alt="project thumbnail" />
       </div>
     </div>
   );
