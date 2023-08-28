@@ -3,7 +3,7 @@ import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 import { useState, useEffect } from "react";
-import ProjImg0 from "../../assets/images/TripWhiz.png";
+import ProjImg0 from "../../assets/images/tripwhiz.png";
 import ProjImg1 from "../../assets/images/BrainFlix.png";
 
 function Sections() {
