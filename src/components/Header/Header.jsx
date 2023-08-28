@@ -102,22 +102,22 @@ function Header() {
 
         <ul className="nav">
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("about")}>
+            <button className="nav__tag" onClick={() => scrollToSection("about")}>
               <span className="nav__tag-number">01.</span>
               <span className="nav__tag-text">about</span>
-            </a>
+            </button>
           </li>
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("work")}>
+            <button className="nav__tag" onClick={() => scrollToSection("work")}>
               <span className="nav__tag-number">02.</span>
               <span className="nav__tag-text">work</span>
-            </a>
+            </button>
           </li>
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("contact")}>
+            <button className="nav__tag" onClick={() => scrollToSection("contact")}>
               <span className="nav__tag-number">03.</span>
               <span className="nav__tag-text">contact</span>
-            </a>
+            </button>
           </li>
           <li className="buttons">
             <a className="nav__tag-button raise">Resume</a>
@@ -127,31 +127,31 @@ function Header() {
       <nav className="header__nav-desktop">
         <ul className="nav__list-desktop">
           <li className="nav-list__item-desktop">
-            <a
+            <button
               className="nav__tag-desktop"
               onClick={() => scrollToSection("about")}
             >
               <span className="nav__tag-number-desktop">01.</span>
               about
-            </a>
+            </button>
           </li>
           <li className="nav-list__item-desktop">
-            <a
+            <button
               className="nav__tag-desktop"
               onClick={() => scrollToSection("work")}
             >
               <span className="nav__tag-number-desktop">02.</span>
               work
-            </a>
+            </button>
           </li>
           <li className="nav-list__item-desktop">
-            <a
+            <button
               className="nav__tag-desktop"
               onClick={() => scrollToSection("contact")}
             >
               <span className="nav__tag-number-desktop">03.</span>
               contact
-            </a>
+            </button>
           </li>
           <li className="buttons">
             <a className="raise">Resume</a>

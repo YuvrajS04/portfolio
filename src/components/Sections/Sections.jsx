@@ -13,18 +13,15 @@ function Sections() {
     setIsVisible(true);
   }, []);
   const projImgArr = [ProjImg0, ProjImg1];
-  console.log(projectdata);
   return (
     <div className={`sections`}>
-      <section className="hero">
+      <section id="hero" className="hero">
         <div className={`hero__container ${isVisible ? "visible" : ""}`}>
           <h3 className={`hero__subheading slide-from-top`}>Hi there, I'm</h3>
           <h1 className={`hero__heading slide-from-top`}>Yuvraj Sirohi.</h1>
           <h2 className={`hero__statement slide-from-top`}>
             A Web Developer on a mission.
           </h2>
-          {/* <h2 className="hero__statement">Crafting Digital Solutions with Precision.</h2>
-                <h2 className="hero__statement">Transforming Ideas into Seamless Reality.</h2> */}
           <p className="hero__paragraph slide-from-top">
             In the ever-evolving world of web development, I find my passion in
             turning complex challenges into elegant solutions. With expertise in
