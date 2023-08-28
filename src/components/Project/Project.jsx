@@ -3,9 +3,8 @@ import "./Project.scss";
 import { Icon } from '@iconify/react';
 
 
-function project({ project }) {
+function project({ project, projImg }) {
   const techArray = project.techStack.split(", ").map((tech) => tech.trim());
-  console.log(techArray);
   return (
     <div className="project">
       <div className="project__wrapper">
@@ -23,7 +22,9 @@ function project({ project }) {
           <Icon className="project__link-logo" icon="line-md:github-loop" />
         </a>
       </div>
-      <div className="project__image" alt={project.heading} ></div>
+      <div className="project__image"  >
+        <img className="project__img" src={projImg} />
+        </div>
     </div>
   );
 }
