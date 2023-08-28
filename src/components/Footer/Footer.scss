@@ -12,6 +12,9 @@
     @include tablet {
         display: none;
     }
+    &-item:hover{
+      transform: translateY(-0.125rem);
+    }
   }
   &__list-desktop{
     display: none;
@@ -64,6 +67,9 @@
     height: 7.625rem;
     margin: 1rem auto 0 auto;
     background-color: #a8b2d1;
+  }
+  &__list-item-desktop:hover{
+    transform: translateY(-0.125rem);
   }
   &__icon {
     color: #ccd6f6;

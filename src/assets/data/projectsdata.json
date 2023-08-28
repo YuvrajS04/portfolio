@@ -1,14 +1,28 @@
 [
-{
-    "heading" : "TripWhiz",
-    "description" : "TripWhiz is a web application that helps users discover their ideal vacation destinations. With the click of a button, users can select from a variety of tags, such as adventure, tropical, historical, wildlife, and more. TripWhiz then presents the user with a gallery of photos that correspond to their chosen tags, from which they can select photos that inspire them the most.",
-    "techStack" : "React, Node.js, Express, Axios, react-toastify, API Development",
-    "githubLink" : "https://github.com/YuvrajS04/TripWhiz"
-},
-{
-    "heading" : "BrainFlix",
-    "description" : "BrainFlix is a full-stack web application designed for video sharing and streaming.Users can upload videos with titles and descriptions, watch videos along with details and comments, and explore related videos. The application is responsive, adapting to desktop, tablet, and mobile devices.The project includes components like VideoList for rendering video lists, VideoDetail for displaying video details and comments, and VideoForm for uploading new videos.",
-    "techStack" : "React, Axios, React Router, JavaScript, Node.js, Express",
-    "githubLink" : "https://github.com/YuvrajS04/TripWhiz"
-}
+  {
+    "heading": "TripWhiz",
+    "description": "TripWhiz is a web application that helps users discover their ideal vacation destinations. With the click of a button, users can select from a variety of tags, such as adventure, tropical, historical, wildlife, and more. TripWhiz then presents the user with a gallery of photos that correspond to their chosen tags, from which they can select photos that inspire them the most.",
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express",
+      "Axios",
+      "react-toastify",
+      "API Development"
+    ],
+    "githubLink": "https://github.com/YuvrajS04/TripWhiz"
+  },
+  {
+    "heading": "BrainFlix",
+    "description": "BrainFlix is a full-stack web application designed for video sharing and streaming.Users can upload videos with titles and descriptions, watch videos along with details and comments, and explore related videos. The application is responsive, adapting to desktop, tablet, and mobile devices.",
+    "techStack": [
+      "React",
+      "Axios",
+      "React Router",
+      "JavaScript",
+      "Node.js",
+      "Express"
+    ],
+    "githubLink": "https://github.com/YuvrajS04/BrainFlix"
+  }
 ]
