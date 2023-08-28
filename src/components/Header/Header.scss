@@ -237,9 +237,12 @@
 }
 
 .scrolled {
-  /* Add properties to make the header sticky when scrolling up */
   position: sticky;
   top: 0;
   background-color: #0a192f;
-  /* Add other styling properties as needed */
+  transition: all 1s ease;
+}
+
+.noscroll {
+  top: -2rem;
 }

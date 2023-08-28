@@ -95,7 +95,7 @@ function Header() {
   return (
     <header
       className={`header ${isVisible ? "visible" : ""} ${
-        isScrolled ? "scrolled" : ""
+        isScrolled ? "scrolled" : "noscroll"
       }`}
     >
       <div className="header__logo">
