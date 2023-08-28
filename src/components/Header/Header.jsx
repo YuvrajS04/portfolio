@@ -9,7 +9,7 @@ function Header() {
   const [navOpen, setNavOpen] = useState(false); // For controlling the navigation menu
   const [bodyScroll, setBodyScroll] = useState(true); // To control body scrolling
   const [isVisible, setIsVisible] = useState(false); // To track header visibility
-  const [isScrolled, setIsScrolled] = useState(false); // To track header scroll state
+  const [isScrolled, setIsScrolled] = useState(true); // To track header scroll state
   const [prevScrollY, setPrevScrollY] = useState(0); // To track previous scroll position
 
   // Function to toggle the navigation menu
