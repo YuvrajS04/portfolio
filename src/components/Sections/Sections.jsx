@@ -3,40 +3,29 @@ import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 import { useState, useEffect } from "react";
-import ProjImg0 from "../../assets/images/TripWhiz.png"; 
-import ProjImg1 from "../../assets/images/BrainFlix.png"; 
+import ProjImg0 from "../../assets/images/TripWhiz.png";
+import ProjImg1 from "../../assets/images/BrainFlix.png";
 
 function Sections() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
+    setIsVisible(true);
   }, []);
-const projImgArr = [ProjImg0, ProjImg1];
+  const projImgArr = [ProjImg0, ProjImg1];
+  console.log(projectdata);
   return (
     <div className={`sections`}>
       <section className="hero">
         <div className={`hero__container ${isVisible ? "visible" : ""}`}>
-          <h3
-            className={`hero__subheading slide-from-top`}
-          >
-            Hi there, I'm
-          </h3>
-          <h1
-            className={`hero__heading slide-from-top`}
-          >
-            Yuvraj Sirohi.
-          </h1>
-          <h2
-            className={`hero__statement slide-from-top`}
-          >
+          <h3 className={`hero__subheading slide-from-top`}>Hi there, I'm</h3>
+          <h1 className={`hero__heading slide-from-top`}>Yuvraj Sirohi.</h1>
+          <h2 className={`hero__statement slide-from-top`}>
             A Web Developer on a mission.
           </h2>
           {/* <h2 className="hero__statement">Crafting Digital Solutions with Precision.</h2>
                 <h2 className="hero__statement">Transforming Ideas into Seamless Reality.</h2> */}
-          <p
-            className="hero__paragraph slide-from-top"
-          >
+          <p className="hero__paragraph slide-from-top">
             In the ever-evolving world of web development, I find my passion in
             turning complex challenges into elegant solutions. With expertise in
             HTML, CSS, JavaScript, Node, React, and more, I embrace every
@@ -114,7 +103,7 @@ const projImgArr = [ProjImg0, ProjImg1];
           <span className="heading__number">02.</span>some things i've built
         </h2>
         {projectdata.map((project, index) => (
-          <Project key={index} project={project} projImg={projImgArr[index]}/>
+          <Project key={index} project={project} projImg={projImgArr[index]} />
         ))}
       </section>
       <section id="contact" className="contact">

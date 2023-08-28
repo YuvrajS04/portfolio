@@ -67,7 +67,7 @@
   }
 
   &__subheading {
-    // font-family: "SFMono";
+    font-family: "SFMono";
     color: #64ffda;
     font-weight: 500;
     margin: 0rem;
@@ -83,6 +83,7 @@
   padding: 0rem 3.125rem;
   max-width: 92.25rem;
   margin: 0 auto;
+  justify-content: center;
 
   @include tablet {
     padding: 0rem 6.25rem;
