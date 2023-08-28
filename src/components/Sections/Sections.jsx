@@ -3,6 +3,8 @@ import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
 import { useState, useEffect } from "react";
+import ProjImg0 from "../../assets/images/TripWhiz.png"; 
+import ProjImg1 from "../../assets/images/BrainFlix.png"; 
 
 function Sections() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +12,7 @@ function Sections() {
   useEffect(() => {
     setIsVisible(true)
   }, []);
-
+const projImgArr = [ProjImg0, ProjImg1];
   return (
     <div className={`sections`}>
       <section className="hero">
@@ -112,7 +114,7 @@ function Sections() {
           <span className="heading__number">02.</span>some things i've built
         </h2>
         {projectdata.map((project, index) => (
-          <Project key={index} project={project} />
+          <Project key={index} project={project} projImg={projImgArr[index]}/>
         ))}
       </section>
       <section id="contact" className="contact">
