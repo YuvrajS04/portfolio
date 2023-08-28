@@ -2,18 +2,31 @@ import "./Sections.scss";
 import projectdata from "../../assets/data/projectsdata.json";
 import Project from "../Project/Project";
 import Photo from "../../assets/images/avatar.jpg";
+import { useState, useEffect } from "react";
+import ProjImg0 from "../../assets/images/TripWhiz.png";
+import ProjImg1 from "../../assets/images/BrainFlix.png";
 
 function Sections() {
+  // State variable to track visibility
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Effect to set visibility to true when component mounts
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // Array of project images
+  const projImgArr = [ProjImg0, ProjImg1];
   return (
-    <>
-      <section className="hero">
-        <div className="hero__container">
-          <h3 className="hero__subheading">Hi there, I'm</h3>
-          <h1 className="hero__heading">Yuvraj Sirohi.</h1>
-          <h2 className="hero__statement">A Web Developer on a mission.</h2>
-          {/* <h2 className="hero__statement">Crafting Digital Solutions with Precision.</h2>
-                <h2 className="hero__statement">Transforming Ideas into Seamless Reality.</h2> */}
-          <p className="hero__paragraph">
+    <div className={`sections`}>
+      <section id="hero" className="hero">
+        <div className={`hero__container ${isVisible ? "visible" : ""}`}>
+          <h3 className={`hero__subheading slide-from-top`}>Hi there, I'm</h3>
+          <h1 className={`hero__heading slide-from-top`}>Yuvraj Sirohi.</h1>
+          <h2 className={`hero__statement slide-from-top`}>
+            A Web Developer on a mission.
+          </h2>
+          <p className="hero__paragraph slide-from-top">
             In the ever-evolving world of web development, I find my passion in
             turning complex challenges into elegant solutions. With expertise in
             HTML, CSS, JavaScript, Node, React, and more, I embrace every
@@ -21,8 +34,15 @@ function Sections() {
             Together, let's bring your ideas to life and make a meaningful
             impact in the digital realm.
           </p>
-          <div class="buttons">
-            <a class="raise" target="_blank" rel="noreferrer" href="https://github.com/YuvrajS04">Discover my work</a>
+          <div class="buttons ">
+            <a
+              class="raise"
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/YuvrajS04"
+            >
+              Discover my work
+            </a>
           </div>
         </div>
       </section>
@@ -84,7 +104,7 @@ function Sections() {
           <span className="heading__number">02.</span>some things i've built
         </h2>
         {projectdata.map((project, index) => (
-          <Project key={index} project={project} />
+          <Project key={index} project={project} projImg={projImgArr[index]} />
         ))}
       </section>
       <section id="contact" className="contact">
@@ -99,10 +119,17 @@ function Sections() {
           contribute to your next web endeavor.
         </p>
         <div class="buttons">
-          <a class="raise" target="_blank" rel="noreferrer" href="mailto:yuvrajsirohi22@gmail.com">Reach out!</a>
+          <a
+            class="raise"
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:yuvrajsirohi22@gmail.com"
+          >
+            Reach out!
+          </a>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

@@ -1,113 +1,200 @@
 import "./Header.scss";
-import logo from "../../assets/logo/logo.svg";
+import logo from "../../assets/logo/Yuvraj.png";
 import close from "../../assets/icons/close.svg";
-import menu from "../../assets/icons/menu.svg"
+import menu from "../../assets/icons/menu.svg";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function Header() {
-  const [navOpen, setNavOpen] = useState(false);
-  const [bodyScroll, setBodyScroll] = useState(true);
-  const ToggleNav = () => {
-    setNavOpen(!navOpen)
-    setBodyScroll(navOpen)
-  };
-  const handleClickOutsideNav = (event) => {
-    const headerNav = document.querySelector(".header__nav");
-    const menu = document.querySelector(".menu");
-    
-    if (headerNav) {
-      if (headerNav && menu && !headerNav.contains(event.target) && !menu.contains(event.target)) {
-        setNavOpen(false)
-        setBodyScroll(navOpen)
-      }
-    }
-  }
+  const [navOpen, setNavOpen] = useState(false); // For controlling the navigation menu
+  const [bodyScroll, setBodyScroll] = useState(true); // To control body scrolling
+  const [isVisible, setIsVisible] = useState(false); // To track header visibility
+  const [isScrolled, setIsScrolled] = useState(false); // To track header scroll state
+  const [prevScrollY, setPrevScrollY] = useState(0); // To track previous scroll position
 
+  // Function to toggle the navigation menu
+  const ToggleNav = () => {
+    setNavOpen(!navOpen);
+    setBodyScroll(navOpen);
+  };
+
+  // Callback function to handle clicks outside of the navigation menu
+  const handleClickOutsideNav = useCallback(
+    (event) => {
+      const headerNav = document.querySelector(".header__nav");
+      const menu = document.querySelector(".menu");
+
+      if (headerNav) {
+        if (
+          headerNav &&
+          menu &&
+          !headerNav.contains(event.target) &&
+          !menu.contains(event.target)
+        ) {
+          setNavOpen(false);
+          setBodyScroll(navOpen);
+        }
+      }
+    },
+    [navOpen]
+  );
+
+  // Function to scroll to a section when a navigation item is clicked
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({behavior: "smooth"});
-      setNavOpen(false)
-      setBodyScroll(true)
+      section.scrollIntoView({ behavior: "smooth" });
+      setNavOpen(false);
+      setBodyScroll(true);
     }
-  }
+  };
 
+  // Effect to control body scrolling
   useEffect(() => {
     document.body.style.overflow = bodyScroll ? "auto" : "hidden";
 
     return () => {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     };
-  }, [bodyScroll])
+  }, [bodyScroll]);
 
+  // Effect to handle clicks outside the navigation menu
   useEffect(() => {
     window.addEventListener("click", handleClickOutsideNav);
 
     return () => {
-      window.removeEventListener("click", handleClickOutsideNav)
+      window.removeEventListener("click", handleClickOutsideNav);
     };
-  }, [navOpen])
+  }, [navOpen, handleClickOutsideNav]);
 
+  // Effect to set header visibility
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
+  // Effect to handle header scrolling behavior
+  useEffect(() => {
+    const handlescroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY) {
+        setIsScrolled(false);
+      } else {
+        setTimeout(() => {
+          setIsScrolled(true);
+        }, 250);
+      }
+      setPrevScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handlescroll);
+
+    return () => {
+      window.removeEventListener("scroll", handlescroll);
+    };
+  }, [prevScrollY]);
 
   return (
-    <header className="header">
+    <header
+      className={`header ${isVisible ? "visible" : ""} ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
       <div className="header__logo">
-        <img className="logo" src={logo} />
+        <img className="logo" src={logo} alt="website logo" />
       </div>
-      <img className={` ${navOpen ? "menu" : "menu-alternative"}`} src={menu} onClick={ToggleNav} />
-      <div className={` ${navOpen ? "blur" : 'no-blur'}`}  ></div>
+      <img
+        className={` ${navOpen ? "menu" : "menu-alternative"}`}
+        src={menu}
+        onClick={ToggleNav}
+        alt="hamburger menu icon"
+      />
+      <div className={` ${navOpen ? "blur" : "no-blur"}`}></div>
 
-      <nav className={`header__nav ${navOpen ? 'active' : ''}`} >
-        <img className={` ${navOpen ? "close" : "close-alternative"}`} src={close} onClick={ToggleNav} />
+      <nav className={`header__nav ${navOpen ? "active" : ""}`}>
+        <img
+          className={` ${navOpen ? "close" : "close-alternative"}`}
+          src={close}
+          onClick={ToggleNav}
+          alt="close icon"
+        />
 
         <ul className="nav">
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("about")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("about")}
+            >
               <span className="nav__tag-number">01.</span>
               <span className="nav__tag-text">about</span>
-            </a>
+            </button>
           </li>
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("work")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("work")}
+            >
               <span className="nav__tag-number">02.</span>
               <span className="nav__tag-text">work</span>
-            </a>
+            </button>
           </li>
           <li className="nav__list-item">
-            <a className="nav__tag" onClick={() => scrollToSection("contact")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("contact")}
+            >
               <span className="nav__tag-number">03.</span>
               <span className="nav__tag-text">contact</span>
-            </a>
+            </button>
           </li>
           <li className="buttons">
-            <a className="nav__tag-button raise">Resume</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link"
+              className="nav__tag-button raise"
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </nav>
-      <nav className="header__nav-desktop" >
+      <nav className="header__nav-desktop">
         <ul className="nav__list-desktop">
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("about")}>
+            <button
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("about")}
+            >
               <span className="nav__tag-number-desktop">01.</span>
               about
-            </a>
+            </button>
           </li>
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("work")}>
+            <button
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("work")}
+            >
               <span className="nav__tag-number-desktop">02.</span>
               work
-            </a>
+            </button>
           </li>
           <li className="nav-list__item-desktop">
-            <a className="nav__tag-desktop" onClick={() => scrollToSection("contact")}>
+            <button
+              className="nav__tag-desktop"
+              onClick={() => scrollToSection("contact")}
+            >
               <span className="nav__tag-number-desktop">03.</span>
               contact
-            </a>
+            </button>
           </li>
           <li className="buttons">
-            <a className="raise">Resume</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link"
+              className="raise"
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </nav>

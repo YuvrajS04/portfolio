@@ -1,9 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @import "../../styles/partials/variables";
 
-
-
-
 .blur {
   position: fixed;
   backdrop-filter: blur(1px);
@@ -21,7 +18,8 @@
   position: absolute;
   top: 2rem;
   right: 1.5rem;
-  height: 45px;
+  height: 25px;
+  cursor: pointer;
 }
 
 .close-alternative {
@@ -40,8 +38,8 @@
   position: absolute;
   top: 2rem;
   right: 1.5rem;
-  height: 45px;
-
+  height: 25px;
+  cursor: pointer;
   @include tablet {
     display: none;
   }
@@ -52,7 +50,17 @@
   display: flex;
   flex-direction: row;
   height: 100px;
-  background-color: #0A192F;
+  background-color: #0a192f;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-50%);
+  transition: transform 1s ease-in-out, opacity 2s ease-in-out;
+  opacity: 0;
+  z-index: 2;
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   @include tablet {
     display: flex;
@@ -62,31 +70,34 @@
 }
 
 .logo {
-  height: 75px;
-  margin: 1rem 1.5rem;
+  height: 45px;
+  margin: 1.2rem;
+  @include tablet {
+    position: static;
+    height: 75px;
+    margin: 1rem 1.5rem;
+  }
 }
 
 .header__nav {
   position: fixed;
-  right: -100%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -100vh;
+  right: 0;
   width: 60vw;
   background-color: #112240;
   transition: all 0.25s ease-in-out;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  font-family: "SFMono";
 
   @include tablet {
     display: none;
   }
-
 }
-
 .header__nav-desktop {
   @include tablet {
     display: flex;
@@ -105,29 +116,34 @@
 }
 
 .nav__tag-desktop {
-  @include tablet{
-  font-size: 1rem;
-  color: #ccd6f6;
-  text-transform: capitalize;
-  margin-right: 2rem;
-  cursor: pointer;
+  @include tablet {
+    font-size: 0.813rem;
+    color: #ccd6f6;
+    text-transform: capitalize;
+    margin-right: 2rem;
+    cursor: pointer;
+    font-family: "SFMono";
+    background-color: #0b192f;
+    border: none;
   }
 }
 
-.nav__tag-desktop:hover{
-    color: #64ffda;
+.nav__tag-desktop:hover {
+  color: #64ffda;
 }
 
-.nav__tag-number-desktop{
-@include tablet{
-  color: #64ffda;
-  margin-right: 0.313rem;
-}
+.nav__tag-number-desktop {
+  @include tablet {
+    color: #64ffda;
+    margin-right: 0.313rem;
+    font-family: "SFMono";
+    font-size: 0.688rem;
+  }
 }
 
 .nav__button-desktop {
   padding: 0.825rem 1.2rem;
-  background-color: #0A192F;
+  background-color: #0a192f;
   color: #64ffda;
   text-decoration: none;
   border-radius: 0.313rem;
@@ -137,13 +153,16 @@
   border: 0.063rem solid #64ffda;
 }
 
-
 .header__nav.active {
   right: 0;
+  top: 0;
 }
 
 .nav {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__list-item {
     margin-bottom: 2.25rem;
@@ -155,12 +174,15 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #112240;
+    border: none;
 
     &-text {
       font-size: 1.125rem;
       color: #ccd6f6;
+      font-family: "SFMono";
     }
-    &-text:hover{
+    &-text:hover {
       color: #64ffda;
       cursor: pointer;
     }
@@ -170,19 +192,7 @@
       font-size: 1rem;
       color: #64ffda;
       margin-bottom: 0.3rem;
-    }
-
-    &-button {
-      display: flex;
-      justify-content: center;
-      padding: 0.825rem 1.2rem;
-      color: #64ffda;
-      text-decoration: none;
-      border-radius: 0.313rem;
-      margin-top: 0.625rem;
-      min-width: 7.375rem;
-      margin: 3rem auto;
-      border: 0.125rem solid #64ffda;
+      font-family: "SFMono";
     }
   }
 }
@@ -195,18 +205,19 @@
 }
 
 /* Set button colors (only for the raise button) */
-.buttons .raise { 
-  --color: #64ffda; 
-  --hover: #fff; 
+.buttons .raise {
+  --color: #64ffda;
+  --hover: #fff;
 }
 .buttons {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* Basic button styles (only for the raise button) */
-.buttons .raise {  
+.buttons .raise {
   color: var(--color);
   transition: 0.25s;
   background: none;
@@ -219,8 +230,16 @@
   max-width: 14rem;
 
   &:hover,
-  &:focus { 
+  &:focus {
     border-color: var(--hover);
     color: #fff;
   }
+}
+
+.scrolled {
+  /* Add properties to make the header sticky when scrolling up */
+  position: sticky;
+  top: 0;
+  background-color: #0a192f;
+  /* Add other styling properties as needed */
 }
