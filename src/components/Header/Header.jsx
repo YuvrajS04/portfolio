@@ -3,7 +3,7 @@ import logo from "../../assets/logo/Yuvraj.png";
 import close from "../../assets/icons/close.svg";
 import menu from "../../assets/icons/menu.svg";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function Header() {
   const [navOpen, setNavOpen] = useState(false);
@@ -15,7 +15,7 @@ function Header() {
     setNavOpen(!navOpen);
     setBodyScroll(navOpen);
   };
-  const handleClickOutsideNav = (event) => {
+  const handleClickOutsideNav = useCallback((event) => {
     const headerNav = document.querySelector(".header__nav");
     const menu = document.querySelector(".menu");
 
@@ -30,7 +30,7 @@ function Header() {
         setBodyScroll(navOpen);
       }
     }
-  };
+  },[navOpen]);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -54,7 +54,7 @@ function Header() {
     return () => {
       window.removeEventListener("click", handleClickOutsideNav);
     };
-  }, [navOpen]);
+  }, [navOpen, handleClickOutsideNav]);
 
   useEffect(() => {
     setIsVisible(true);
@@ -84,12 +84,13 @@ function Header() {
       }`}
     >
       <div className="header__logo">
-        <img className="logo" src={logo} />
+        <img className="logo" src={logo} alt="website logo" />
       </div>
       <img
         className={` ${navOpen ? "menu" : "menu-alternative"}`}
         src={menu}
         onClick={ToggleNav}
+        alt="hamburger menu icon"
       />
       <div className={` ${navOpen ? "blur" : "no-blur"}`}></div>
 
@@ -98,6 +99,7 @@ function Header() {
           className={` ${navOpen ? "close" : "close-alternative"}`}
           src={close}
           onClick={ToggleNav}
+          alt="close icon"
         />
 
         <ul className="nav">
@@ -120,7 +122,7 @@ function Header() {
             </button>
           </li>
           <li className="buttons">
-            <a className="nav__tag-button raise">Resume</a>
+            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link" className="nav__tag-button raise">Resume</a>
           </li>
         </ul>
       </nav>
@@ -154,7 +156,7 @@ function Header() {
             </button>
           </li>
           <li className="buttons">
-            <a className="raise">Resume</a>
+            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link" className="raise">Resume</a>
           </li>
         </ul>
       </nav>
