@@ -1,6 +1,9 @@
 @use "../../styles/partials/mixins" as *;
 @import "../../styles/partials/variables";
 
+.sections {
+  margin-top: 6.25rem;
+}
 .hero {
   min-height: calc(100vh - 100px);
   display: flex;

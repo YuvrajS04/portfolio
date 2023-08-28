@@ -46,15 +46,14 @@
 }
 
 .header {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: row;
   height: 100px;
   background-color: #0a192f;
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
+  width: 100%;
   transform: translateY(-50%);
-  transition: transform 1s ease-in-out, opacity 2s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 2s ease-in-out, top 1s ease-in-out;
   opacity: 0;
   z-index: 2;
   &.visible {
@@ -237,12 +236,11 @@
 }
 
 .scrolled {
-  position: sticky;
   top: 0;
   background-color: #0a192f;
-  transition: all 1s ease;
 }
 
 .noscroll {
-  top: -2rem;
+  top: -100%;
 }
+
