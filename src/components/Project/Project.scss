@@ -16,7 +16,6 @@
     padding: 3rem 0;
     margin-bottom: 0;
   }
-
   &__description {
     color: #a8b2d1;
     font-size: 1.125rem;
@@ -85,6 +84,9 @@
     color: #e6f1ff;
     font-size: clamp(1.5rem, 5vw, 1.75rem);
     margin: 0rem;
+  }
+  &__heading:hover{
+    color: #64ffda;
   }
 
   &__tech-stack {

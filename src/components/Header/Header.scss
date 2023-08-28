@@ -60,7 +60,6 @@
   &.visible {
     transform: translateY(0);
     opacity: 1;
-    // overflow-x: clip;
   }
 
   @include tablet {
@@ -84,8 +83,6 @@
   position: fixed;
   top: -100vh;
   right: 0;
-  // top: -50%;
-  // transform: translateY(-50%);
   width: 60vw;
   background-color: #112240;
   transition: all 0.25s ease-in-out;
@@ -96,7 +93,6 @@
   justify-content: center;
   z-index: 1;
   font-family: "SFMono";
-  // transition: right 0.5s ease-in-out;
 
   @include tablet {
     display: none;
@@ -198,19 +194,6 @@
       margin-bottom: 0.3rem;
       font-family: "SFMono";
     }
-
-    // &-button {
-    //   display: flex;
-    //   justify-content: center;
-    //   padding: 0.825rem 1.2rem;
-    //   color: #64ffda;
-    //   text-decoration: none;
-    //   border-radius: 0.313rem;
-    //   margin-top: 0.625rem;
-    //   min-width: 7.375rem;
-    //   margin: 3rem auto;
-    //   border: 0.125rem solid #64ffda;
-    // }
   }
 }
 
