@@ -6,32 +6,40 @@ import React from "react";
 import { useState, useEffect, useCallback } from "react";
 
 function Header() {
-  const [navOpen, setNavOpen] = useState(false);
-  const [bodyScroll, setBodyScroll] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [navOpen, setNavOpen] = useState(false); // For controlling the navigation menu
+  const [bodyScroll, setBodyScroll] = useState(true); // To control body scrolling
+  const [isVisible, setIsVisible] = useState(false); // To track header visibility
+  const [isScrolled, setIsScrolled] = useState(false); // To track header scroll state
+  const [prevScrollY, setPrevScrollY] = useState(0); // To track previous scroll position
+
+  // Function to toggle the navigation menu
   const ToggleNav = () => {
     setNavOpen(!navOpen);
     setBodyScroll(navOpen);
   };
-  const handleClickOutsideNav = useCallback((event) => {
-    const headerNav = document.querySelector(".header__nav");
-    const menu = document.querySelector(".menu");
 
-    if (headerNav) {
-      if (
-        headerNav &&
-        menu &&
-        !headerNav.contains(event.target) &&
-        !menu.contains(event.target)
-      ) {
-        setNavOpen(false);
-        setBodyScroll(navOpen);
+  // Callback function to handle clicks outside of the navigation menu
+  const handleClickOutsideNav = useCallback(
+    (event) => {
+      const headerNav = document.querySelector(".header__nav");
+      const menu = document.querySelector(".menu");
+
+      if (headerNav) {
+        if (
+          headerNav &&
+          menu &&
+          !headerNav.contains(event.target) &&
+          !menu.contains(event.target)
+        ) {
+          setNavOpen(false);
+          setBodyScroll(navOpen);
+        }
       }
-    }
-  },[navOpen]);
+    },
+    [navOpen]
+  );
 
+  // Function to scroll to a section when a navigation item is clicked
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -40,6 +48,8 @@ function Header() {
       setBodyScroll(true);
     }
   };
+
+  // Effect to control body scrolling
   useEffect(() => {
     document.body.style.overflow = bodyScroll ? "auto" : "hidden";
 
@@ -48,6 +58,7 @@ function Header() {
     };
   }, [bodyScroll]);
 
+  // Effect to handle clicks outside the navigation menu
   useEffect(() => {
     window.addEventListener("click", handleClickOutsideNav);
 
@@ -56,9 +67,12 @@ function Header() {
     };
   }, [navOpen, handleClickOutsideNav]);
 
+  // Effect to set header visibility
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Effect to handle header scrolling behavior
   useEffect(() => {
     const handlescroll = () => {
       const currentScrollY = window.scrollY;
@@ -77,6 +91,7 @@ function Header() {
       window.removeEventListener("scroll", handlescroll);
     };
   }, [prevScrollY]);
+
   return (
     <header
       className={`header ${isVisible ? "visible" : ""} ${
@@ -104,25 +119,41 @@ function Header() {
 
         <ul className="nav">
           <li className="nav__list-item">
-            <button className="nav__tag" onClick={() => scrollToSection("about")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("about")}
+            >
               <span className="nav__tag-number">01.</span>
               <span className="nav__tag-text">about</span>
             </button>
           </li>
           <li className="nav__list-item">
-            <button className="nav__tag" onClick={() => scrollToSection("work")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("work")}
+            >
               <span className="nav__tag-number">02.</span>
               <span className="nav__tag-text">work</span>
             </button>
           </li>
           <li className="nav__list-item">
-            <button className="nav__tag" onClick={() => scrollToSection("contact")}>
+            <button
+              className="nav__tag"
+              onClick={() => scrollToSection("contact")}
+            >
               <span className="nav__tag-number">03.</span>
               <span className="nav__tag-text">contact</span>
             </button>
           </li>
           <li className="buttons">
-            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link" className="nav__tag-button raise">Resume</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link"
+              className="nav__tag-button raise"
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </nav>
@@ -156,7 +187,14 @@ function Header() {
             </button>
           </li>
           <li className="buttons">
-            <a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link" className="raise">Resume</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://drive.google.com/file/d/1G4y6vTQ4uPGv0Ntzrn1pBLgT3Fk5hct7/view?usp=drive_link"
+              className="raise"
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </nav>

@@ -10,48 +10,48 @@
     gap: 1rem;
     padding: 0;
     @include tablet {
-        display: none;
+      display: none;
     }
-    &-item:hover{
+    &-item:hover {
       transform: translateY(-0.125rem);
     }
   }
-  &__list-desktop{
-    display: none;
-    @include tablet{
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    bottom: -1rem;
-    margin: 0;
-    gap: 1rem;
-    }
-  }
-  &__text-link-desktop{
+  &__list-desktop {
     display: none;
     @include tablet {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    bottom: -1rem;
-    right: 2.5rem;
-    writing-mode: vertical-lr;
-    color: #a8b2d1;
-    cursor: pointer;
-    font-size: 0.75rem;
-    font-family: "SFMono";
-    letter-spacing: 0.1em;
-    line-height: 1.125rem;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      bottom: -1rem;
+      margin: 0;
+      gap: 1rem;
     }
   }
-  &__text-link-desktop:hover{
+  &__text-link-desktop {
+    display: none;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      position: fixed;
+      bottom: -1rem;
+      right: 2.5rem;
+      writing-mode: vertical-lr;
+      color: #a8b2d1;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-family: "SFMono";
+      letter-spacing: 0.1em;
+      line-height: 1.125rem;
+    }
+  }
+  &__text-link-desktop:hover {
     color: #64ffda;
   }
-  &__text-link-desktop:hover::after{
+  &__text-link-desktop:hover::after {
     margin: 3rem auto 0 auto;
   }
-  &__text-link-desktop::after{
+  &__text-link-desktop::after {
     content: "";
     display: block;
     width: 0.063rem;
@@ -60,7 +60,7 @@
     background-color: #a8b2d1;
     transition: 0.3s ease;
   }
-  &__list-desktop::after{
+  &__list-desktop::after {
     content: "";
     display: block;
     width: 0.063rem;
@@ -68,30 +68,29 @@
     margin: 1rem auto 0 auto;
     background-color: #a8b2d1;
   }
-  &__list-item-desktop:hover{
+  &__list-item-desktop:hover {
     transform: translateY(-0.125rem);
   }
   &__icon {
     color: #ccd6f6;
-    width: 1.5rem; 
+    width: 1.5rem;
     height: 1.5rem;
   }
-  &__icon:hover{
+  &__icon:hover {
     color: #64ffda;
     cursor: pointer;
   }
-  &__description{
+  &__description {
     color: #a8b2d1;
     display: flex;
     justify-content: center;
 
     &-link {
-        margin-left: 0.25rem;
-        color: #64ffda;
+      margin-left: 0.25rem;
+      color: #64ffda;
     }
     &-link:visited {
-        color: #64ffda;
+      color: #64ffda;
     }
   }
-
 }
