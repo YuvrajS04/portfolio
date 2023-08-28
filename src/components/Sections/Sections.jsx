@@ -7,11 +7,15 @@ import ProjImg0 from "../../assets/images/TripWhiz.png";
 import ProjImg1 from "../../assets/images/BrainFlix.png";
 
 function Sections() {
+  // State variable to track visibility
   const [isVisible, setIsVisible] = useState(false);
 
+  // Effect to set visibility to true when component mounts
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Array of project images
   const projImgArr = [ProjImg0, ProjImg1];
   return (
     <div className={`sections`}>
