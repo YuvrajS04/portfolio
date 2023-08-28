@@ -79,9 +79,7 @@ function Header() {
       if (currentScrollY > prevScrollY) {
         setIsScrolled(false);
       } else {
-        setTimeout(() => {
           setIsScrolled(true);
-        }, 250);
       }
       setPrevScrollY(currentScrollY);
     };
