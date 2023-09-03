@@ -45,7 +45,7 @@ function Footer() {
         yuvrajsirohi22@gmail.com
       </a>
       <p className="footer__description">
-        Design heavily influenced by{" "}
+        Design influenced by{" "}
         <a
           target="_blank"
           rel="noreferrer"

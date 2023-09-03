@@ -46,20 +46,16 @@
 }
 
 .header {
-  position: sticky;
-  height: 0;
+  position: fixed;
   display: flex;
   flex-direction: row;
+  height: 100px;
   background-color: #0a192f;
   width: 100%;
+  transform: translateY(-50%);
   transition: transform 1s ease-in-out, opacity 2s ease-in-out, top 1s ease-in-out;
   opacity: 0;
   z-index: 2;
-  @include tablet {
-    position: fixed;
-    transform: translateY(-50%);
-    height: 100px;
-  }
   &.visible {
     transform: translateY(0);
     opacity: 1;
@@ -245,6 +241,6 @@
 }
 
 .noscroll {
-    top: -100%;
+  top: -100%;
 }
 
