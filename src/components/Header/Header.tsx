@@ -2,7 +2,6 @@ import "./Header.scss";
 import logo from "../../assets/logo/Yuvraj.png";
 import close from "../../assets/icons/close.svg";
 import menu from "../../assets/icons/menu.svg";
-import React from "react";
 import { useState, useEffect, useCallback } from "react";
 
 function Header() {
