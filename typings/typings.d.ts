@@ -13,17 +13,17 @@ declare module '*.svg' {
 declare module '*.jpg';
 declare module '*.png';
 
-declare module '../../src/components/Header/Header.tsx' {
+declare module 'components/Header/Header' {
     const Header: React.ComponentType;
     export default Header;
 }
 
-declare module './components/Sections/Sections' {
+declare module 'components/Sections/Sections' {
     const Sections: React.ComponentType;
     export default Sections;
 }
 
-declare module './components/Footer/Footer' {
+declare module 'components/Footer/Footer' {
     const Footer: React.ComponentType;
     export default Footer;
 }
