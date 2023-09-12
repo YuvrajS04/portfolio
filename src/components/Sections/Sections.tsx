@@ -17,6 +17,15 @@ function Sections() {
 
   // Array of project images
   const projImgArr = [ProjImg0, ProjImg1];
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  interface ProjectData {
+  // Define the properties of project data object here
+  heading: string;
+  description: string;
+  techStack: string;
+  githubLink: string;
+  }
   return (
     <div className={`sections`}>
       <section id="hero" className="hero">
@@ -34,9 +43,9 @@ function Sections() {
             Together, let's bring your ideas to life and make a meaningful
             impact in the digital realm.
           </p>
-          <div class="buttons ">
+          <div className="buttons">
             <a
-              class="raise"
+              className="raise"
               target="_blank"
               rel="noreferrer"
               href="https://github.com/YuvrajS04"
@@ -118,9 +127,9 @@ function Sections() {
           projects that make an impact. Let's connect and discuss how I can
           contribute to your next web endeavor.
         </p>
-        <div class="buttons">
+        <div className="buttons">
           <a
-            class="raise"
+            className="raise"
             target="_blank"
             rel="noreferrer"
             href="mailto:yuvrajsirohi22@gmail.com"
