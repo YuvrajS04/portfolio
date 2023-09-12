@@ -2,7 +2,6 @@ import "./Header.scss";
 import logo from "../../assets/logo/Yuvraj.png";
 import close from "../../assets/icons/close.svg";
 import menu from "../../assets/icons/menu.svg";
-import React from "react";
 import { useState, useEffect, useCallback } from "react";
 
 function Header() {
@@ -20,16 +19,16 @@ function Header() {
 
   // Callback function to handle clicks outside of the navigation menu
   const handleClickOutsideNav = useCallback(
-    (event) => {
+    (event : MouseEvent) => {
       const headerNav = document.querySelector(".header__nav");
       const menu = document.querySelector(".menu");
 
       if (headerNav) {
         if (
-          headerNav &&
-          menu &&
-          !headerNav.contains(event.target) &&
-          !menu.contains(event.target)
+          headerNav instanceof Node &&
+          menu instanceof Node &&
+          !headerNav.contains(event.target as Node) &&
+          !menu.contains(event.target as Node)
         ) {
           setNavOpen(false);
           setBodyScroll(navOpen);
@@ -40,7 +39,7 @@ function Header() {
   );
 
   // Function to scroll to a section when a navigation item is clicked
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId : string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });

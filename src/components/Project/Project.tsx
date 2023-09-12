@@ -2,9 +2,15 @@ import React from "react";
 import "./Project.scss";
 import { Icon } from "@iconify/react";
 
-function Project({ project, projImg }) {
+interface ProjectData {
+  // Define the properties of project data object here
+  heading: string;
+  description: string;
+  techStack: string[];
+  githubLink: string;
+  }
+function Project({ project, projImg }: { project: ProjectData; projImg: string }) {
   const techStacks = project.techStack;
-
   return (
     <div className="project">
       <div className="project__wrapper">
