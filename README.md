@@ -2,7 +2,8 @@
 
 Welcome to my portfolio project repository! This repository contains the code for my personal portfolio website, showcasing my web development skills and projects. Below, you'll find an overview of the project structure and components.
 
-<img width="1440" alt="Screenshot 2023-09-12 at 6 17 00 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/41e9ec2a-7fd2-405c-bfeb-dd212bb81c5c">
+![Portfolio](https://github.com/YuvrajS04/portfolio/assets/123492654/2d8e5cf7-9153-45a5-92f1-ade3072b5082)
+
 
 
 ## Project Structure
@@ -23,6 +24,8 @@ The Header component represents the top navigation bar of the website. It includ
 ### Sections.js
 The Sections component contains various sections of the portfolio website, including the hero section, about me section, featured projects, and a contact section.
 
+<img width="1440" alt="Screenshot 2023-09-12 at 6 17 00 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/41e9ec2a-7fd2-405c-bfeb-dd212bb81c5c">
+
 <img width="1440" alt="Screenshot 2023-09-12 at 6 20 53 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/2d8a9477-8dbd-479c-95a8-330578005cee">
 
 <img width="1440" alt="Screenshot 2023-09-12 at 6 21 32 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/770460ba-009b-4c23-bdf9-71c13d6efdef">
@@ -37,6 +40,10 @@ The Project component is responsible for rendering individual project sections. 
 ### Footer.js
 The Footer component represents the website's footer section, which includes social media links, a contact email, and a reference to the original design source.
 
+<img width="583" alt="Screenshot 2023-09-12 at 11 42 20 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/5287d495-d11d-499c-bd54-6b2755eddefd">
+
+<img width="1440" alt="Screenshot 2023-09-12 at 11 41 53 PM" src="https://github.com/YuvrajS04/portfolio/assets/123492654/1a558eff-9a40-4574-807b-6122cf5449db">
+
 ## Demo
 
 You can view a live demo of this project by visiting [here](https://yuvrajsirohi.netlify.app/).
@@ -46,13 +53,13 @@ If you want to run this project locally, follow these steps:
 1. Clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/yourusername/your-portfolio-project.git
+   git clone https://github.com/YuvrajS04/portfolio.git
    ```
 
 2. Change into the project directory:
 
    ```bash
-   cd your-portfolio-project
+   cd portfolio
    ```
 
 3. Install the required dependencies:
