@@ -146,7 +146,7 @@ function Header() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://drive.google.com/file/d/1UIDLtJVdFIKgRs8CF970igV61tNwi4gv/view?usp=sharing"
+              href="https://drive.google.com/file/d/1xfm8iVOW6U4U4CTTqx8Z5Tsxl_zPr5lr/view?usp=sharing"
               className="nav__tag-button raise"
             >
               Resume
@@ -187,7 +187,7 @@ function Header() {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://drive.google.com/file/d/1UIDLtJVdFIKgRs8CF970igV61tNwi4gv/view?usp=sharing"
+              href="https://drive.google.com/file/d/1xfm8iVOW6U4U4CTTqx8Z5Tsxl_zPr5lr/view?usp=sharing"
               className="raise"
             >
               Resume
